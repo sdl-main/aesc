@@ -1,8 +1,10 @@
-\documentclass{article}
+\documentclass[dvipdfmx]{article}
 
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{titlesec}
+\usepackage{tikz}
+\usepackage{circuitikz}
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
@@ -251,5 +253,218 @@ $n$ --- объемная концентрация электронов.
 \item
   Сивухин Д.В. Общий курс физики. Т.3. Электричество
 \end{itemize}
+
+\subsection{Электромагнитная индукция}
+\paragraph{}
+
+В 1831 году Майкл Фарадей провёл следующий опыт:
+
+\paragraph{}
+  \noindent\makebox[\linewidth][c]{
+  \begin{tikzpicture}
+    \draw (0,0)
+    to node[draw,circle,fill=white] {A} (0,2)
+    to [short] (2,2)
+    to [L] (2,0)
+    to [short] (0,0);
+  \end{tikzpicture}}
+
+Он подключил амперметр к катушке и заметил, что если вводить в неё постоянный магнит, то в цепи появляется ток.
+Так было открыто явление \textbf{электромагнитной индукции}.
+
+\paragraph{}
+
+\textbf{Электромагнитная индукция} заключается в том, что переменное магнитное поле
+порождает вихревое электрическое. \textbf{Закон Ленца} гласит, что возникающий при этом индукционный ток
+направлен в противодействие причинам, его породившим.
+
+\paragraph{}
+
+Определим магнитный поток как произведение магнитной индукции на площадь $S$ и на косинус угла между вектором
+$\vec{B}$ и нормалью $n$:
+
+\begin{equation*}
+  \Phi = BScos\alpha, \quad
+  B = 1 [\text{Тл}], \quad
+  \Phi = 1 [\text{Вб}]
+\end{equation*}
+\begin{equation*}
+  \text{ЭДС индукции } \varepsilon_i = -\frac{d\Phi}{dt}
+\end{equation*}
+\paragraph{}
+
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.6\linewidth}
+  \textbf{Задача.} Перемычка длины $x$ движется вправо со скоростью $\vec{\upsilon}$.
+  \begin{equation*}
+    \varepsilon_i = -\frac{\Delta\Phi}{\Delta t} = -\frac{B\Delta S}{\Delta t} =
+    -\frac{Bx\upsilon\Delta t}{\Delta t} = -Bx\upsilon
+  \end{equation*}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+  \includegraphics[width=\linewidth,natwidth=368,natheight=181]{images/5.jpg}
+\end{minipage}}
+\paragraph{}
+
+Тогда возникший индукционный ток будет равен I = $\frac{Bx\upsilon}{R}$ и направлен (по правилу буравчика)
+против часовой стрелки.
+
+\begin{equation*}
+  \varepsilon_i = IR; \quad \frac{Q}{\Delta t} = \frac{I^2R\Delta t}{\Delta t} = P = \frac{B^2x^2\upsilon^2}{R}
+\end{equation*}
+
+\paragraph{Индуктивность катушки.}
+
+Пусть есть катушка. $N$ --- количество витков, $S$ --- площадь сечения.
+
+\begin{equation*}
+  \Phi = BSN = \underbrace{\alpha SN}_{L}I
+\end{equation*}
+
+\textbf{Индуктивность} $L$ --- коэффициент пропорциональности между электрическим током $I$, текущим в каком-либо
+замкнутом контуре, и магнитным потоком $\Phi$.
+
+\begin{equation*}
+  L = 1[\text{Гн}]
+\end{equation*}
+
+Для соленоида длины $l$ индуктивность равна $L = \frac{l}{b}$, где $b$ --- расстояние между витками. Если же $b = 0$,
+то $L = \frac{l}{d}$, где $d$ --- толщина витка.
+
+\begin{equation*}
+  \varepsilon_i = -\Phi' = -LI
+\end{equation*}
+
+\newpage
+
+\subsection{Движение в электромагнитных полях}
+
+\begin{equation*}
+  \vec{F_{\text{Л}}} = \underbrace{q\vec{E}}_{F_\text{ЛЭ}} + \underbrace{q\left[\vec{\upsilon}\times\vec{B}\right]}_{F_\text{ЛМ}}
+\end{equation*}
+\paragraph{}
+
+Распишем векторное произведение как определитель матрицы:
+
+\begin{equation*}
+  \vec{F}_{\text{ЛМ}}
+  =
+  q
+  \begin{vmatrix}
+    \vec{i} & \vec{j} & \vec{k}\\
+    \upsilon_x & \upsilon_y & \upsilon_z\\
+    B_x & B_y & B_z
+  \end{vmatrix}
+  =
+  q\left(
+  (\upsilon_yB_z - \upsilon_zB_y)\vec{i}
+  +
+  (\upsilon_ZB_x - \upsilon_xB_z)\vec{j}
+  +
+  (\upsilon_xB_y - \upsilon_yB_x)\vec{k}
+  \right)
+\end{equation*}
+\paragraph{}
+
+Получили полезную формулу магнитной составляющей силы Лоренца.
+
+\paragraph{Задача 1.}
+
+Точечный заряд $q$ движется в некоторой плоскости с начальной скоростью $\upsilon$. Вектор магнитной
+индукции перпендикулярен плоскости. Определить характеристики траектории движения частицы.
+
+\paragraph{}
+
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.6\linewidth}
+  Заметим, что $\upsilon = const$, потому что вектор силы Лоренца перпендикулярен $\vec{\upsilon}$, значит
+  траектория движения частицы - окружность.
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+  \includegraphics[width=\linewidth,natwidth=342,natheight=188]{images/6.jpg}
+\end{minipage}}
+
+Запишем второй закон Ньютона:
+
+\begin{equation*}
+  \frac{m\upsilon^2}{R} = q\upsilon B \Rightarrow R = \frac{m\upsilon}{qB}
+\end{equation*}
+
+Найдём период обращения $T$:
+
+\begin{equation*}
+  T = \frac{2\pi R}{\upsilon} = \frac{2\pi m}{qB}.
+\end{equation*}
+\paragraph{}
+
+Покажем пример применения полученных результатов:
+
+\paragraph{Задача 2.}
+
+Электрон влетает в однородное магнитное поле ширины $R$. Необходимо определить минимальную скорость,
+при которой электрон вылетит из поля.
+
+\paragraph{}
+
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.5\linewidth}
+  Скорость будет минимальна при такой траектории электрона, что на выходе из поля электрон будет лететь по касательной.
+  Так как частица будет лететь по окружности, радиус этой окружности будет равен R.
+  \begin{equation*}
+    \frac{m\upsilon}{eB} = R \Rightarrow \upsilon = \frac{ReB}{m}.
+  \end{equation*}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \includegraphics[width=\linewidth,natwidth=358,natheight=309]{images/7.jpg}
+\end{minipage}}
+
+\paragraph{Задача 3.}
+
+Точечный заряд имеет произвольный начальный вектор скорости, а вектор $\vec{B}$ перпендикулярен
+некоторой плоскости $\gamma$.
+Необходимо понять, как будет двигаться заряд.
+
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.5\linewidth}
+  Вектор $\vec{\upsilon}$ можно разложить на две составляющие: одна лежит в плоскости $\gamma$,
+  другая перпендикулярна ей.
+  \begin{equation*}
+    \vec{F_{\text{Л}}} = q \left[ (\vec{\upsilon}_{\perp} + \vec{\upsilon}_{\parallel})\times\vec{B} \right]
+  \end{equation*}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \includegraphics[width=\linewidth,natwidth=383,natheight=230]{images/8.jpg}
+\end{minipage}}
+\paragraph{}
+
+Если перейти в систему отсчёта, движущуюся вверх со скоростью $\vec{\upsilon}_\parallel$, то в ней траектория частицы
+будет окружностью, значит, если вернуться в исходную систему отсчёта, то частица будет двигаться по спирали.
+
+\begin{equation*}
+  \upsilon_\parallel = \upsilon cos\alpha, \quad \upsilon_\perp = \upsilon sin\alpha,
+  \quad R = \frac{m\upsilon sin\alpha}{qB}, \quad T = \frac{2\pi m}{qB}, \quad h = \frac{2\pi m}{qB} \upsilon cos\alpha
+\end{equation*}
+
+\paragraph{Задача 4.}
+
+То же условие, что и в задаче 3, но сонаправленно с $\vec{B}$ действует электрическое поле $\vec{E}$.
+
+\paragraph{}
+
+В этой задаче $\vec{\upsilon_\parallel}$ увеличивается линейно.
+
+\begin{equation*}
+  a_z = \frac{qE}{m}, \quad \upsilon_z = \frac{qE}{m}t, \quad z(t) = \frac{qE}{2m}t^2
+\end{equation*}
+
+\paragraph{}
+
+\newpage
+
+Рассчитаем расстояние между витками спирали, по которой полетит частица:
+
+\begin{equation*}
+  h_n = z_n - z_{n-1} = \frac{qE}{2m}\left(\frac{2\pi m}{qB}\right)^2\left(n^2-(n-1)^2\right) = \frac{2\pi^2Em}{qB}(2n-1)
+\end{equation*}
 
 \end{document}
