@@ -183,6 +183,63 @@
   Тривиальные понятия анализируем явно.
 \end{enumerate}
 
+\newpage
 
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+\section{(11.09.2018)}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\subsection{Ханойские башни}
+
+\begin{lstlisting}
+  void abc(int n, int a, int b, int c) {
+      if (n > 0) {
+          abc(n-1, a, c, b);
+          cout << a << " --> " << b << endl;
+          abc(n-1, c, b, a);
+      }
+  }
+\end{lstlisting}
+
+Общая идея: при $n = 1$ решение тривиально, а если мы умеем решать задачу для $n-1$ дисков, то перенесём $n-1$
+дисков на третий стержень. Последний оставшийся диск перенесём на второй стержень. После этого перенесём все диски
+с третьего стержня на второй.
+
+\subsection{Быстрое возведение в степень}
+
+\textbf{Неправильный код}
+
+\noindent
+\begin{lstlisting}
+  int pow(int x, int n) {
+      if (n == 0) return 1;
+      if (n \% 2 == 0) {
+          return pow(x, n / 2) * pow(x, n / 2);
+      }
+      return pow(x, n-1) * x;
+  }
+\end{lstlisting}
+
+Недостатки кода: $x$ нужно сделать глобальным, чтобы не передавать его в рекурсии, т.к. он не изменяется.
+Также такой код совершает $O(N)$ итераций.
+
+\newpage
+\paragraph{}
+\textbf{Правильный код}
+
+\noindent
+\begin{lstlisting}
+  int x;
+  int pow(int n) {
+      if (n == 0) return 1;
+      if (n \% 2 == 0) {
+          int m = pow(n / 2);
+          return m*m;
+      }
+      return x * pow(n - 1);
+  }
+\end{lstlisting}
 
 \end{document}
+
+
