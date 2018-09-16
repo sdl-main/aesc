@@ -1,9 +1,12 @@
 \documentclass[dvipdfmx]{article}
 
 \usepackage{amsmath}
+\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{titlesec}
 \usepackage{tikz}
+\usepackage{caption}
+\usepackage{float}
 \usepackage{circuitikz}
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -14,6 +17,29 @@
             {}
             {0pt}
             {Урок \thesection\quad}
+            
+\newcommand{\rulesep}{\unskip\ \vrule\ }
+\usetikzlibrary{circuits.ee.IEC}
+\tikzset{circuit declare symbol = ac source}
+\tikzset{set ac source graphic = ac source IEC graphic}
+\tikzset{
+         ac source IEC graphic/.style=
+          {
+           transform shape,
+           circuit symbol lines,
+           circuit symbol size = width 3 height 3,
+           shape=generic circle IEC,
+           /pgf/generic circle IEC/before background=
+            {
+             \pgfpathmoveto{\pgfpoint{-0.8pt}{0pt}}
+             \pgfpathsine{\pgfpoint{0.4pt}{0.4pt}}
+             \pgfpathcosine{\pgfpoint{0.4pt}{-0.4pt}}
+             \pgfpathsine{\pgfpoint{0.4pt}{-0.4pt}}
+             \pgfpathcosine{\pgfpoint{0.4pt}{0.4pt}}
+             \pgfusepathqstroke
+            }
+          }
+        }
 
 \begin{document}
 
@@ -227,7 +253,7 @@ $n$ --- объемная концентрация электронов.
 Рассчитаем магнитное поле, создаваемое бесконечным проводом во всём пространстве:
 \paragraph{}
 \begin{minipage}{0.4\linewidth}
-  \includegraphics[width=\linewidth,natwidth=364,natheight=266]{images/4.png}
+  \includegraphics[width=\linewidth,natwidth=364,natheight=266]{images/4.jpg}
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
   \begin{equation*}
@@ -470,5 +496,291 @@ $\vec{B}$ и нормалью $n$:
   \frac{\mu_0I}{4\pi}\int\frac{[\vec{r}\times d\vec{l}]}{r^3},
 \end{equation*}
 где $\mu_0 = 4\pi \times 10^{-7}$ Гн/м
+
+\newpage
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+\section{(15.09.18)}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\subsection{Переменный ток}
+\paragraph{}
+
+Переменный ток --- это ток, сила и направление которого меняется со временем. Мы будем рассматривать
+ток, меняющийся по гармоническому закону
+
+\begin{equation*}
+  i = i_0sin(\omega t)
+\end{equation*}
+
+\noindent\makebox[\linewidth][c]{\rule{\linewidth}{0.4pt}}
+\paragraph{}
+\noindent\makebox[\linewidth][c]{
+  \begin{minipage}{0.5\linewidth}
+    \noindent\makebox[\linewidth][c]{
+    \begin{circuitikz}[circuit ee IEC]
+      \draw (2,0) to [ac source] (0,0) to [short={near end}] (0,1)
+      to [resistor={info=$R$}] (2,1) to [short={near end}] (2,0);
+    \end{circuitikz}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{equation*}
+    U = iR \enskip \Rightarrow \enskip U = i_0Rsin(\omega t)
+  \end{equation*}
+\end{minipage}}
+
+\paragraph{}
+\noindent\makebox[\linewidth][c]{\rule{\linewidth}{0.4pt}}
+\paragraph{}
+
+\noindent\makebox[\linewidth][c]{
+  \begin{minipage}{0.5\linewidth}
+    \noindent\makebox[\linewidth][c]{
+    \begin{circuitikz}[circuit ee IEC]
+      \draw (2,0) to [ac source] (0,0) to [short={near end}] (0,1)
+      to [capacitor={info=$C$}] (2,1) to [short={near end}] (2,0);
+    \end{circuitikz}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{equation*}
+    U = \frac{q}{c} = \frac{1}{c}\int i_osin(\omega t)dt = -\frac{1}{\omega c}cos(\omega t)
+  \end{equation*}
+  \paragraph{}
+  Введём ёмкостное сопротивление:
+  \begin{equation*}
+    X_c = \frac{1}{\omega c}
+  \end{equation*}
+\end{minipage}}
+
+\paragraph{}
+\noindent\makebox[\linewidth][c]{\rule{\linewidth}{0.4pt}}
+\paragraph{}
+
+\noindent\makebox[\linewidth][c]{
+  \begin{minipage}{0.5\linewidth}
+    \noindent\makebox[\linewidth][c]{
+    \begin{circuitikz}[circuit ee IEC]
+      \draw (2,0) to [ac source] (0,0) to [short={near end}] (0,1)
+      to [inductor={info=$L$}] (2,1) to [short={near end}] (2,0);
+    \end{circuitikz}}
+\end{minipage}
+  \begin{minipage}{0.5\linewidth}
+  \begin{equation*}
+    \varepsilon = Li' = L\omega i_0cos(\omega t)
+  \end{equation*}
+  Введём индуктивное сопротивление:
+  \begin{equation*}
+    X_L = \omega L
+  \end{equation*}
+\end{minipage}}
+
+\paragraph{}
+\noindent\makebox[\linewidth][c]{\rule{\linewidth}{0.4pt}}
+\paragraph{}
+
+В цепях переменного тока выделяют \textbf{активное} и \textbf{реактивное сопротивление}.
+На активном сопротивлении выделяется джоулево тепло.
+Реактивное сопротивление обусловлено передачей энергии переменным током электрическому или магнитному полю.
+
+\paragraph{}
+
+Реактивное сопротивление элемента обозначается как $X$ и равно разности индуктивного и ёмкостного сопротивления
+элемента.
+
+\begin{equation*}
+  X = X_L - X_C
+\end{equation*}
+
+В зависимости от знака $X$ можно судить о свойствах элемента в цепи:
+
+\begin{itemize}
+\item
+  $X > 0$ --- элемент проявляет свойства индуктивности.
+\item
+  $X = 0$ --- элемент имеет чисто активное сопротивление.
+\item
+  $X < 0$ --- элемент проявляет ёмкостные свойства.
+\end{itemize}
+
+\paragraph{}
+\textbf{Электрический импеданс} --- это комплексное число $Z = R + jX$, где $R$ --- активное сопротивление, $j$ ---
+мнимая единица (чтобы не путать с обозначением мгновенной силы тока $i$). Аргумент импеданса есть не что иное, как
+фазовый сдвиг между током и напряжением электрической цепи.
+
+\paragraph{}
+
+Модуль импеданса по теореме Пифагора:
+
+\begin{equation*}
+  |Z| = \sqrt{R^2 + (\omega L - \frac{1}{\omega C})^2}
+\end{equation*}
+
+\paragraph{}
+
+Зачем нужен импеданс: с помощью него можно применять закон Ома для участка цепи с переменным током. Например, если
+известна амплитуда $U$ напряжения в цепи и полное сопротивление (импеданс) $Z$ её элементов, то амплитуда силы тока в
+цепи будет вычисляться по формуле
+
+\begin{equation*}
+  I = \frac{U}{Z}
+\end{equation*}
+
+\paragraph{}
+
+Рассмотрим подробнее поведение конденсатора в цепи с переменным током. Заряд на обкладках является
+максимальным на экстремумах синусоиды. Между экстремумами конденсатор сначала разряжается, а потом заряжается.
+В итоге за один период он два раза заряжается и два раза разряжается. Поэтому говорят, что конденсатор проводит
+переменный ток (хотя на самом деле никакой заряд через него не проходит, но ток в цепи существует, как если бы в ней
+не было разрыва).
+
+\subsection{Колебательный контур}
+\paragraph{}
+
+Пусть к заряженному конденсатору присоединена катушка индуктивности.
+
+
+\noindent\makebox[\linewidth][c]{
+  \begin{minipage}{0.5\linewidth}
+    \noindent\makebox[\linewidth][c]{
+    \begin{circuitikz}[circuit ee IEC]
+      \draw (2,0) to [capacitor={info=$C$}] (0,0) to [short={near end}] (0,1)
+      to [inductor={info=$L$}] (2,1) to [short={near end}] (2,0);
+    \end{circuitikz}}
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+  \begin{equation*}
+    \frac{q}{c} = -Li', \quad \ddot{q} + \frac{q}{LC} = 0
+  \end{equation*}
+  \begin{equation*}
+    \omega_0 = \frac{1}{LC}, \quad T = 2\pi\sqrt{LC}
+  \end{equation*}
+\end{minipage}}
+\paragraph{}
+
+Эта схема представляет собой \textbf{колебательный контур} и часто используется в радиоэлектронике.
+
+\paragraph{}
+
+Рассчитаем энергию магнитного поля $W$, порождаемого колебательным контуром, когда ток изменяется с $i$ до 0.
+ЭДС самоиндукции, возникающая в катушке, равна
+
+\begin{equation*}
+  \varepsilon = -\Phi = -Li' = -L\frac{\Delta i}{\Delta t}
+\end{equation*}
+\paragraph{}
+
+Величина тока в цепи равна
+
+\begin{equation*}
+  i = \frac{\varepsilon}{R} = -\frac{L}{R}\frac{\Delta i}{\Delta t}
+\end{equation*}
+\paragraph{}
+
+За промежуток времени $\Delta t$ в цепи выделится энергия $\Delta Q$
+
+\begin{equation*}
+  \Delta Q = i^2R\Delta t = -Li\Delta i = -\Phi\Delta i
+\end{equation*}
+\paragraph{}
+
+Вся выделившаяся энергия получается интегрированием
+
+\begin{equation*}
+  Q = \int_{i}^{0}\Delta Q = \frac{Li^2}{2} = W
+\end{equation*}
+
+\subsection{Магнитное поле в веществе}
+\paragraph{}
+
+Для некоторого плоского контура введём величину $\mu = iS$, которая называется \textbf{магнитным моментом}.
+Вектор магнитного момента перпендикулярен плоскости контура. Направление выбирается правилом буравчика
+(буравчик необходимо закручивать по движению тока).
+
+\paragraph{}
+
+Электрон, вращающийся вокруг ядра атома, создаёт элементарный круговой ток и магнитное поле. У этой системы есть
+некоторый магнитный момент $\mu$. Тогда \textbf{намагниченность} системы по определению равна магнитному моменту
+единицы объема вещества:
+\begin{equation*}
+  M = \frac{\mu}{V}
+\end{equation*}
+
+\paragraph{}
+
+Среди веществ по магнитным свойствам выделяют три типа:
+
+\begin{enumerate}
+\item
+  Диамагнетики --- вещества, которые намагничиваются \textit{против направления} внешнего магнитного поля.
+\item
+  Парамагнетики --- вещества, которые намагничиваются \textit{в направлении} внешнего магнитного поля.
+\item
+  Ферромагнетики --- вещества, которые способны иметь остаточную намагниченность в отсутствие внешнего магнитного поля.
+\end{enumerate}
+\paragraph{}
+
+Рассмотрим отношение внутреннего и внешнего магнитного поля разных типов веществ:
+\paragraph{}
+\noindent\makebox[\linewidth][c]{
+  \begin{minipage}{0.32\linewidth}
+  \noindent\makebox[\linewidth][c]{\textbf{Диа- и парамагнетики}}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth,natwidth=246,natheight=264]{images/9.jpg}
+  \end{figure}
+\end{minipage}
+\hspace{1em}
+\rulesep
+\begin{minipage}{0.42\linewidth}
+  \noindent\makebox[\linewidth][c]{\textbf{Ферромагнетики}}
+  \begin{figure}[H]
+    \includegraphics[width=\linewidth,natwidth=275,natheight=224]{images/10.jpg}
+  \end{figure}
+\end{minipage}}
+\paragraph{}
+
+При увеличении внешнего магнитного поля внутреннее поля ферромагнетика насыщается до некоторого
+предела $B_{\text{насыщ}}$.
+После постепенного снижения внешнего поля до нуля внутреннее поле ферромагнетика останется больше нуля.
+Сила, которую надо приложить, чтобы размагнитить ферромагнетик, называется \textbf{коэрцетивной силой}.
+
+\paragraph{}
+
+Получаем следующий график, который называется петлёй гистерезиса:
+
+\paragraph{}
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.7\linewidth}
+  \includegraphics[width=\linewidth,natwidth=584,natheight=541]{images/11.jpg}
+\end{minipage}}
+\paragraph{}
+
+Группы атомов, у которых одинаковое направление магнитного момента, называются \textbf{доменами}.
+
+\noindent\makebox[\linewidth][c]{
+\begin{minipage}{0.4\linewidth}
+  \includegraphics[width=\linewidth,natwidth=299,natheight=169]{images/12.jpg}
+\end{minipage}}
+\paragraph{}
+
+У ненамагниченного вещества сумма магнитных моментов равна нулю. При намагничивании вещества,
+магнитные моменты доменов становятся направленными в одну сторону.
+
+\paragraph{}
+
+\textbf{Температура Кюри} --- температура, при которой ферромагнетик теряет свойство остаточной намагниченности.
+
+\paragraph{}
+
+Если рассматривать магнитные моменты соседних частиц вещества, то можно выделить три группы:
+
+\begin{itemize}
+\item
+  Ферромагнетики --- б\'{о}льшая часть магнитных моментов сонаправлена. ($\uparrow \uparrow \uparrow \uparrow$)
+\item
+  Антиферромагнетики --- магнитные моменты антипараллельны друг другу и примерно равны по модулю,
+  суммарная намагниченность очень мала. ($\uparrow \downarrow \uparrow \downarrow$)
+\item
+  Ферримагнетики --- магнитные моменты антипараллельны друг другу, но не равны по модулю.
+  ($\uparrow_\downarrow\uparrow_\downarrow$)
+\end{itemize}
 
 \end{document}
