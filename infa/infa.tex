@@ -14,7 +14,6 @@
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 \definecolor{mymauve}{rgb}{0.58,0,0.82}
-
 \lstset{ 
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
   basicstyle=\ttfamily,        % the size of the fonts that are used for the code
@@ -24,7 +23,7 @@
   commentstyle=\color{mygreen},    % comment style
   deletekeywords={...},            % if you want to delete keywords from the given language
 %  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
-  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  extendedchars=\true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
   frame=single,	                   % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
@@ -238,6 +237,82 @@
       }
       return x * pow(n - 1);
   }
+\end{lstlisting}
+
+\newpage
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+\section{(18.09.18)}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\subsection{Перебор $N$-значных чисел в $M$-ичной системе счисления}
+
+\begin{lstlisting}
+  // заполнить i-ую позицию
+  void gen(i) {
+      if (i > N) {
+          // печать или анализ варианта
+      }
+      else {
+          for (int j = 0; j < M - 1; ++j) {
+              r[i] = j;
+              gein(i + 1);
+          }
+      }
+  }
+\end{lstlisting}
+
+\subsection{Перебор всех перестановок}
+
+Массив $used[]$ хранит метки использованных чисел в текущей перестановке
+
+\begin{lstlisting}
+void gen(i) {
+    if (i > N)
+        // печать
+    else {
+        for (int j = 1; j <= N; ++j) {
+            if (!used[j]) {
+                used[j] = true;
+                r[i] = j;
+                gen(i + 1);
+                used[j] = false;
+            }
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Перебор всех сочетаний}
+
+Перебираем сочетания из $N$ элементов по $K$ в порядке возрастания
+
+\begin{lstlisting}
+void gen(i) {
+    if (i > K) {
+        // печать
+    }
+    else {
+        for (int j = r[i-1]+1; j <= N - (k-i); ++j) {
+            r[i] = j;
+            gen(i + 1);
+        }
+    }
+}
+\end{lstlisting}
+
+\subsection{Заливка объекта}
+
+\begin{lstlisting}
+// dx = {1, 1, 1, 0, 0, -1, -1, -1}
+// dy = {1, 0, -1, 1, -1, 1, 0, -1}
+void fill(int x, int y, int c) {
+    if (r[x][y] == 1) {
+        r[x][y] = c;
+        for (int j = 0; j < 8; ++j) {
+            fill(x + dx[j], y + dy[j], c);
+        }
+    }
+}
 \end{lstlisting}
 
 \end{document}
