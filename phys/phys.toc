@@ -1,0 +1,102 @@
+\babel@toc {russian}{}
+\contentsline {section}{\numberline {1}08.09.2018}{2}
+\contentsline {subsection}{\numberline {1.1}\IeC {\CYRM }\IeC {\cyra }\IeC {\cyrg }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyrn }\IeC {\cyro }\IeC {\cyre } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyre }}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{\IeC {\CYRS }\IeC {\cyrp }\IeC {\cyri }\IeC {\cyrs }\IeC {\cyro }\IeC {\cyrk } \IeC {\cyrl }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyru }\IeC {\cyrr }\IeC {\cyrery }:}{6}
+\contentsline {subsection}{\numberline {1.2}\IeC {\CYREREV }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrk }\IeC {\cyrt }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrm }\IeC {\cyra }\IeC {\cyrg }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyrn }\IeC {\cyra }\IeC {\cyrya } \IeC {\cyri }\IeC {\cyrn }\IeC {\cyrd }\IeC {\cyru }\IeC {\cyrk }\IeC {\cyrc }\IeC {\cyri }\IeC {\cyrya }}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{\IeC {\CYRI }\IeC {\cyrn }\IeC {\cyrd }\IeC {\cyru }\IeC {\cyrk }\IeC {\cyrt }\IeC {\cyri }\IeC {\cyrv }\IeC {\cyrn }\IeC {\cyro }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyrsftsn } \IeC {\cyrk }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyru }\IeC {\cyrsh }\IeC {\cyrk }\IeC {\cyri }.}{7}
+\contentsline {subsection}{\numberline {1.3}\IeC {\CYRD }\IeC {\cyrv }\IeC {\cyri }\IeC {\cyrzh }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyre } \IeC {\cyrv } \IeC {\cyrerev }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrk }\IeC {\cyrt }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrm }\IeC {\cyra }\IeC {\cyrg }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyrn }\IeC {\cyrery }\IeC {\cyrh } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyrya }\IeC {\cyrh }}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 1.}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{}{8}
+\contentsline {paragraph}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 2.}{8}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 3.}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrd }\IeC {\cyra }\IeC {\cyrch }\IeC {\cyra } 4.}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{}{9}
+\contentsline {paragraph}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrk }\IeC {\cyro }\IeC {\cyrn } \IeC {\CYRB }\IeC {\cyri }\IeC {\cyro }-\IeC {\CYRS }\IeC {\cyra }\IeC {\cyrv }\IeC {\cyra }\IeC {\cyrr }\IeC {\cyra }-\IeC {\CYRL }\IeC {\cyra }\IeC {\cyrp }\IeC {\cyrl }\IeC {\cyra }\IeC {\cyrs }\IeC {\cyra }}{10}
+\contentsline {section}{\numberline {2}15.09.2018}{11}
+\contentsline {subsection}{\numberline {2.1}\IeC {\CYRP }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyre }\IeC {\cyrm }\IeC {\cyre }\IeC {\cyrn }\IeC {\cyrn }\IeC {\cyrery }\IeC {\cyrishrt } \IeC {\cyrt }\IeC {\cyro }\IeC {\cyrk }}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{11}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {subsection}{\numberline {2.2}\IeC {\CYRK }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrb }\IeC {\cyra }\IeC {\cyrt }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyrsftsn }\IeC {\cyrn }\IeC {\cyrery }\IeC {\cyrishrt } \IeC {\cyrk }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrt }\IeC {\cyru }\IeC {\cyrr }}{12}
+\contentsline {paragraph}{}{12}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {subsection}{\numberline {2.3}\IeC {\CYRM }\IeC {\cyra }\IeC {\cyrg }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrt }\IeC {\cyrn }\IeC {\cyro }\IeC {\cyre } \IeC {\cyrp }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyre } \IeC {\cyrv } \IeC {\cyrv }\IeC {\cyre }\IeC {\cyrshch }\IeC {\cyre }\IeC {\cyrs }\IeC {\cyrt }\IeC {\cyrv }\IeC {\cyre }}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{13}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{14}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {paragraph}{}{15}
+\contentsline {section}{\numberline {3}20.10.2018}{16}
+\contentsline {subsection}{\numberline {3.1}\IeC {\CYRK }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyre }\IeC {\cyrb }\IeC {\cyra }\IeC {\cyrn }\IeC {\cyri }\IeC {\cyrya }}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}
+\contentsline {paragraph}{}{16}

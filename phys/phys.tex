@@ -12,11 +12,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage[english,russian]{babel}
 
-\titleformat{\section}
-            {\normalfont\Large\bfseries}
-            {}
-            {0pt}
-            {Урок \thesection\quad}
             
 \newcommand{\rulesep}{\unskip\ \vrule\ }
 \usetikzlibrary{circuits.ee.IEC}
@@ -43,8 +38,17 @@
 
 \begin{document}
 
+\tableofcontents
+\newpage
+
+\titleformat{\section}
+            {\normalfont\Large\bfseries}
+            {}
+            {0pt}
+            {\Roman{section}.\quad}
+
 \noindent\makebox[\textwidth]{\rule{\paperwidth}{0.4pt}}
-\section{(08.09.2018)}
+\section{08.09.2018}
 \noindent\makebox[\textwidth]{\rule{\paperwidth}{0.4pt}}
 
 \subsection{Магнитное поле}
@@ -499,7 +503,7 @@ $\vec{B}$ и нормалью $n$:
 
 \newpage
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
-\section{(15.09.18)}
+\section{15.09.2018}
 \noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 
 \subsection{Переменный ток}
@@ -782,5 +786,63 @@ $\vec{B}$ и нормалью $n$:
   Ферримагнетики --- магнитные моменты антипараллельны друг другу, но не равны по модулю.
   ($\uparrow_\downarrow\uparrow_\downarrow$)
 \end{itemize}
+
+\newpage
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+\section{20.10.2018}
+\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
+
+\subsection{Колебания}
+
+\paragraph{}
+
+\textbf{Колебания} --- процесс, который точно или приблизительно повторяется с течением времени.
+Пусть на материальную точку действует сила $F$. По второму закону Ньютона
+
+\begin{equation}\label{eq1}
+  m\vec{a} = \vec{F}
+\end{equation}
+
+\paragraph{}
+Мы будем рассматривать одномерный случай, когда $F = f(x)$. Разложим функцию $f(x)$ в ряд Тейлора в нуле:
+
+\begin{equation*}
+  f(x) = f(0) + \frac{f'(0)x}{1!} + \frac{f''(0)x^2}{2!} + \frac{f'''(0)x^3}{3!} + ...
+\end{equation*}
+
+\paragraph{}
+Мы рассматриваем малые свободные колебания.
+\textit{Свободные} --- значит, система замкнута.
+\textit{Малые} --- значит нас интересуют
+только первые два слагаемых ряда Тейлора:
+
+\begin{equation*}
+  f(x) = f(0) + f'(0)x
+\end{equation*}
+
+\paragraph{}
+Тогда перепишем уравнение (\ref{eq1}), считая, что $f(0) = 0$:
+
+\begin{equation*}
+  \ddot{x} + \frac{|f'(0)|}{m}x = 0
+\end{equation*}
+
+\paragraph{}
+Обозначим $\omega_0^2 = \frac{|f'(0)|}{m}$. Получим \emph{уравнение гармонических колебаний}.
+
+\begin{equation*}
+  \ddot{x} + \omega_0^2x = 0
+\end{equation*}
+
+\paragraph{}
+Домножим обе части на $\dot{x}$ и возьмём производную по времени, учитывая, что $(\dot{x})' = 2\dot{x}\ddot{x}$ и
+$(x^2)' = 2x\dot{x}$:
+
+\begin{equation*}
+  \dot{x}\ddot{x} + \omega_0^2x\dot{x} = 0, \quad \frac{1}{2}\frac{d}{dt}(\dot{x}^2 + \omega_0^2x^2) = 0
+\end{equation*}
+
+\paragraph{}
+Производная равна нулю, значит $\dot{x}^2 + \omega_0^2x^2 = const$. Получим закон сохранения энергии.
 
 \end{document}
